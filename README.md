@@ -2,5 +2,7 @@
 
 UI Reference : https://dribbble.com/shots/14180391-Smart-Home
 
-https://user-images.githubusercontent.com/29474697/183251229-9b7e316c-a2d2-4268-a095-8df5649c038b.mp4
+
+
+https://github.com/user-attachments/assets/2b6bca56-eeab-40b8-ba49-c568bf2f7b78
 
