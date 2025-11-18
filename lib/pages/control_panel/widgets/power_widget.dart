@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iot_ui_challenge/widgets/transparent_card.dart';
+import 'package:iot_ui_challenge/pages/control_panel/widgets/transparent_card.dart';
 
 class PowerWidget extends StatelessWidget {
   final bool isActive;
   final Function(bool) onChanged;
 
-  const PowerWidget({Key? key, required this.isActive, required this.onChanged})
-      : super(key: key);
+  const PowerWidget({super.key, required this.isActive, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -18,39 +17,37 @@ class PowerWidget extends StatelessWidget {
           const Text(
             "Power",
             style: TextStyle(
-                fontSize: 15, color: Colors.white, fontWeight: FontWeight.w500),
+              fontSize: 15,
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
           ),
-          const SizedBox(
-            height: 5,
-          ),
+          const SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               RichText(
                 text: TextSpan(
-                    text: 'OFF',
-                    style: TextStyle(
-                      fontFamily: "Poppins",
-                        fontSize: 14,
-                        color: !isActive
-                            ? Colors.white
-                            : Colors.black.withOpacity(0.3),
-                        fontWeight: FontWeight.w500),
-                    children: <TextSpan>[
-                      TextSpan(
-                          text: '/',
-                          style:
-                              TextStyle(color: Colors.black.withOpacity(0.3))),
-                      TextSpan(
-                        text: 'ON',
-                        style: TextStyle(
-                          color: isActive
-                              ? Colors.white
-                              : Colors.black.withOpacity(0.3),
-                        ),
+                  text: 'OFF',
+                  style: TextStyle(
+                    fontFamily: "Poppins",
+                    fontSize: 14,
+                    color: !isActive ? Colors.white : Colors.grey,
+                    fontWeight: !isActive ? FontWeight.bold : FontWeight.w500,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(text: ' / ', style: TextStyle(color: Colors.grey)),
+                    TextSpan(
+                      text: 'ON',
+                      style: TextStyle(
+                        color: isActive ? Colors.white : Colors.grey,
+                        fontWeight:
+                            isActive ? FontWeight.bold : FontWeight.w500,
                       ),
-                    ]),
+                    ),
+                  ],
+                ),
               ),
               Transform.scale(
                 alignment: Alignment.center,
@@ -59,8 +56,8 @@ class PowerWidget extends StatelessWidget {
                 child: CupertinoSwitch(
                   onChanged: onChanged,
                   value: isActive,
-                  activeColor: Colors.white.withOpacity(0.5),
-                  trackColor: Colors.black.withOpacity(0.2),
+                  activeTrackColor: Colors.white.withValues(alpha: 0.5),
+                  inactiveTrackColor: Colors.black.withValues(alpha: 0.5),
                 ),
               ),
             ],

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget {
   final String title;
 
-  const CustomAppBar({Key? key, required this.title}) : super(key: key);
+  const CustomAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,12 @@ class CustomAppBar extends StatelessWidget {
         Text(
           title,
           style: const TextStyle(
-              fontSize: 18, color: Colors.black, fontWeight: FontWeight.w500),
+            fontSize: 21,
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+          ),
         ),
-        const SizedBox(
-          width: 30,
-        ),
+        const SizedBox(width: 30),
       ],
     );
   }

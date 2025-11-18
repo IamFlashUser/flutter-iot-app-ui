@@ -9,11 +9,10 @@ class SliderWidget extends StatelessWidget {
   final Function(double) onChange;
 
   const SliderWidget(
-      {Key? key,
+      {super.key,
       required this.progressVal,
       required this.color,
-      required this.onChange})
-      : super(key: key);
+      required this.onChange});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,9 @@ class SliderWidget extends StatelessWidget {
             width: kDiameter + 35,
             height: kDiameter + 35,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white.withValues(
+                alpha: 0.2
+              ),
               shape: BoxShape.circle,
             ),
           ),
@@ -51,7 +52,9 @@ class SliderWidget extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
+                      color: Colors.grey.withValues(
+                        alpha: 0.3
+                      ),
                       spreadRadius: 5,
                       blurRadius: 7,
                       offset: const Offset(0, 3),

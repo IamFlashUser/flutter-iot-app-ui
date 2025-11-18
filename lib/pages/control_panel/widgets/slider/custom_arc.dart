@@ -7,11 +7,11 @@ class CustomArc extends StatelessWidget {
   final Color? color;
 
   const CustomArc({
-    Key? key,
+    super.key,
     this.diameter = 200,
     @required this.sweepAngle,
     @required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

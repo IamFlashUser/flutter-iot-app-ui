@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:iot_ui_challenge/widgets/transparent_card.dart';
+import 'package:iot_ui_challenge/pages/control_panel/widgets/transparent_card.dart';
 
 class TempWidget extends StatelessWidget {
   final double temp;
   final Function(double) changeTemp;
 
-  const TempWidget({Key? key, required this.temp, required this.changeTemp})
-      : super(key: key);
+  const TempWidget({super.key, required this.temp, required this.changeTemp});
 
   @override
   Widget build(BuildContext context) {
